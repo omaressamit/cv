@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Essam - Network Administrator</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #1a1a1a; /* Dark background */
+            color: #333;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #ffffff; /* Keep the container background light */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #2a3b4d; /* Keep the sidebar background as is */
+            color: white;
+            padding: 40px 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .sidebar img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 15px;
+            border: 3px solid #ffffff;
+        }
+
+        .sidebar h1 {
+            font-size: 32px;
+            margin-top: 10px;
+        }
+
+        .sidebar h2 {
+            font-size: 22px;
+            color: #b0c4de;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar .section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #dcdcdc;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .sidebar .section p,
+        .sidebar .section ul {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .sidebar .section ul li {
+            list-style: none;
+            padding: 5px 0;
+            color: #ffffff;
+        }
+
+        /* Main Content */
+        .main {
+            padding: 40px;
+            width: 100%;
+        }
+
+        .main h1 {
+            color: #2a3b4d;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .main h2 {
+            font-size: 20px;
+            color: #666666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main .section {
+            margin-bottom: 30px;
+        }
+
+        .main .section h3 {
+            font-size: 26px;
+            color: #2a3b4d;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .main .section h3::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: #2a3b4d;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            border-radius: 50%;
+        }
+
+        .main .section p {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #555555;
+        }
+
+        .main .section ul li {
+            font-size: 20px;
+            margin-bottom: 10px;
+            line-height: 1.8;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .main .section ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #2a3b4d;
+        }
+
+        /* Two-Page Effect */
+        .page-break {
+            margin: 40px 0;
+            border-top: 3px solid #2a3b4d;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            .sidebar {
+                width: 35%;
+                text-align: left;
+                padding: 40px;
+            }
+            .main {
+                width: 65%;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="profile.jpg" alt="Profile Picture">
+        <h1>Omar Essam</h1>
+        <h2>Network Administrator</h2>
+
+        <div class="section">
+            <h3>Contact</h3>
+            <p>Phone: +20-1274554868</p>
+            <p>Email: omarosten2@gmail.com</p>
+            <p>Location: Mandara Bahari, Alexandria, Egypt</p>
+        </div>
+
+        <div class="section">
+            <h3>Education</h3>
+            <p>Bachelor's in Commerce, Alexandria University</p>
+            <p>Graduated: 2020</p>
+        </div>
+
+        <div class="section">
+            <h3>Certifications</h3>
+            <p>Cisco Certified Network Associate (CCNA 200-301)</p>
+        </div>
+
+        <div class="section">
+            <h3>Skills</h3>
+            <ul>
+                <li>Networking</li>
+                <li>Programming</li>
+                <li>Technical Support</li>
+                <li>Operating Systems</li>
+                <li>Network Security</li>
+                <li>Problem Solving</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Languages</h3>
+            <ul>
+                <li>English (Fluent)</li>
+                <li>Russian (Intermediate)</li>
+                <li>Arabic (Fluent)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Omar Essam</h1>
+        <h2>Network Administrator</h2>
+
+        <div class="section">
+            <h3>Profile</h3>
+            <p>IT Engineer | Network Administrator | Programmer</p>
+            <p>A highly motivated and detail-oriented IT Engineer with over two years of experience in network management, programming, and technical support. Proven expertise in designing, implementing, and troubleshooting network infrastructures. Strong knowledge of networking protocols, cloud technologies, and security best practices. Certified Cisco Network Associate (CCNA 200-301), with a solid understanding of routing, switching, and network operations. Adept at delivering technical support and managing IT projects to ensure seamless operations and customer satisfaction.</p>
+        </div>
+
+        <!-- Page Break -->
+        <div class="page-break"></div>
+
+        <div class="section">
+            <h3>Work Experience</h3>
+            <h4>IT Engineer | Gomla Market Company</h4>
+            <p>July 2022 - Present</p>
+            <ul>
+                <li>Managed and maintained the company's network infrastructure for smooth operations and minimal downtime.</li>
+                <li>Developed software solutions to streamline internal processes and enhance efficiency.</li>
+                <li>Provided technical support to resolve hardware and software issues, reducing system downtime.</li>
+                <li>Configured and troubleshot network devices, including routers, switches, and firewalls.</li>
+                <li>Collaborated with cross-functional teams to ensure timely IT service delivery.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
