@@ -3,267 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Essam - Network Administrator</title>
+    <title>Omar Essam - Network Engineer Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Global Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bold;
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #34495e;
+            --light-gray: #ecf0f1;
+            --bg-color: #ffffff;
         }
 
         body {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            background-color: #1a1a1a; /* Dark background */
-            color: #333;
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f9;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
         }
 
-        /* Container */
         .container {
             max-width: 900px;
-            width: 100%;
-            background-color: #ffffff; /* Keep the container background light */
-            border-radius: 12px;
-            overflow: hidden;
+            margin: 2rem auto;
+            background-color: var(--bg-color);
+            padding: 2rem 3rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+        }
+
+        /* --- Header & Contact --- */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin: 0 0 0.25rem 0;
+            font-weight: 700;
+        }
+
+        header .job-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-weight: 400;
+            margin: 0;
+        }
+        
+        .contact-info {
             display: flex;
-            flex-direction: column;
-            padding-bottom: 20px;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease-in-out;
-            /* Neon glow applied directly to the container */
-            box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.6), 0 0 20px 10px rgba(0, 255, 255, 0.4), 0 0 30px 15px rgba(0, 255, 255, 0.2);
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
         }
 
-        /* Sidebar */
-        .sidebar {
-            background-color: #2a3b4d; /* Keep the sidebar background as is */
-            color: white;
-            padding: 40px 20px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease-in-out;
-            /* Neon glow applied directly to the sidebar */
-            box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.6), 0 0 20px 10px rgba(0, 255, 255, 0.4), 0 0 30px 15px rgba(0, 255, 255, 0.2);
+        .contact-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .sidebar img {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 15px;
-            border: 3px solid #ffffff;
+        .contact-info a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
         }
 
-        .sidebar h1 {
-            font-size: 32px;
-            margin-top: 10px;
+        .contact-info span {
+            display: flex;
+            align-items: center;
         }
 
-        .sidebar h2 {
-            font-size: 22px;
-            color: #b0c4de;
-            font-weight: normal;
-            margin-bottom: 30px;
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+            font-size: 1.1rem;
         }
 
-        .sidebar .section {
-            margin-bottom: 25px;
+        /* --- General Section Styling --- */
+        section {
+            margin-bottom: 2.5rem;
         }
 
-        .sidebar .section h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #dcdcdc;
-            font-weight: 600;
-            text-transform: uppercase;
+        h2 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .sidebar .section p,
-        .sidebar .section ul {
-            font-size: 16px;
-            line-height: 1.6;
+        /* --- Summary --- */
+        #summary p {
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+        
+        /* --- Technical Skills --- */
+        #skills .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
 
-        .sidebar .section ul li {
-            list-style: none;
-            padding: 5px 0;
-            color: #ffffff;
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+        
+        .skill-category p {
+            margin: 0;
+            font-size: 0.95rem;
         }
 
-        /* Main Content */
-        .main {
-            padding: 40px;
-            width: 100%;
+        /* --- Experience, Projects, Education, Certs --- */
+        .item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.25rem;
         }
 
-        .main h1 {
-            color: #2a3b4d;
-            font-size: 28px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            text-align: center;
+        .item-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
         }
 
-        .main h2 {
-            font-size: 20px;
-            color: #666666;
-            text-align: center;
-            margin-bottom: 20px;
+        .item .company, .item .institution {
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
         }
 
-        .main .section {
-            margin-bottom: 30px;
+        .date-location {
+            font-style: italic;
+            color: #555;
+            text-align: right;
+            white-space: nowrap;
+            font-size: 0.95rem;
         }
 
-        .main .section h3 {
-            font-size: 26px;
-            color: #2a3b4d;
-            margin-bottom: 10px;
-            position: relative;
+        ul {
             padding-left: 20px;
+            margin-top: 0.5rem;
         }
 
-        .main .section h3::before {
-            content: '';
-            width: 10px;
-            height: 10px;
-            background-color: #2a3b4d;
-            position: absolute;
-            left: 0;
-            top: 8px;
-            border-radius: 50%;
+        li {
+            margin-bottom: 0.5rem;
         }
 
-        .main .section p {
-            font-size: 22px;
-            line-height: 1.8;
-            color: #555555;
+        /* --- Projects --- */
+        #projects .item h3 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+        #projects .item p {
+            margin: 0;
+        }
+        
+        /* --- Certifications --- */
+        #certifications ul {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 0.5rem;
+        }
+        #certifications ul li::before {
+            content: "—";
+            margin-right: 0.5rem;
+            color: var(--primary-color);
         }
 
-        .main .section ul li {
-            font-size: 20px;
-            margin-bottom: 10px;
-            line-height: 1.8;
-            padding-left: 15px;
-            position: relative;
+        /* --- Languages --- */
+        #languages .lang-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
-
-        .main .section ul li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #2a3b4d;
+        .lang-list span {
+            font-size: 1rem;
         }
-
-        /* Two-Page Effect */
-        .page-break {
-            margin: 40px 0;
-            border-top: 3px solid #2a3b4d;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
+        .lang-list strong {
+            color: var(--primary-color);
         }
-
-        /* Responsive Design */
-        @media (min-width: 768px) {
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
             .container {
-                flex-direction: row;
+                padding: 1.5rem;
+                margin: 1rem;
             }
-            .sidebar {
-                width: 35%;
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header .job-title {
+                font-size: 1.3rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .date-location {
                 text-align: left;
-                padding: 40px;
-            }
-            .main {
-                width: 65%;
-                padding: 40px;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <img src="profile.jpg" alt="Profile Picture">
-        <h1>Omar Essam</h1>
-        <h2>Network Administrator</h2>
+    <main class="container">
+        <header>
+            <h1>OMAR ESSAM</h1>
+            <p class="job-title">Network Engineer</p>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +20-1274554868</span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:omaressamit@gmail.com">omaressamit@gmail.com</a></span>
+                <span><i class="fas fa-map-marker-alt"></i> Alexandria, Egypt</span>
+                <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/omar-essam-it/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+                <span><i class="fab fa-github"></i> <a href="https://github.com/omaressam" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+            </div>
+        </header>
 
-        <div class="section">
-            <h3>Contact</h3>
-            <p>Phone: +20-1274554868</p>
-            <p>Email: omarosten2@gmail.com</p>
-            <p>Location: Mandara Bahari, Alexandria, Egypt</p>
-        </div>
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>
+                Results-driven and CCNA-certified Network Engineer with over three years of hands-on experience in enterprise network administration, infrastructure management, and security hardening. Proficient in utilizing the Kali Linux suite (Metasploit, Nmap, Burp Suite) for vulnerability assessment, penetration testing, and comprehensive security audits. Adept at designing and implementing secure network solutions, troubleshooting complex technical issues, and collaborating with cross-functional teams to optimize network performance, reliability, and security posture.
+            </p>
+        </section>
 
-        <div class="section">
-            <h3>Education</h3>
-            <p>Bachelor's in Commerce, Alexandria University</p>
-            <p>Graduated: 2020</p>
-        </div>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Networking Protocols</h3>
+                    <p>TCP/IP, OSPFv2, STP, EtherChannel, VLANs & Inter-VLAN Routing, NAT, DHCP, DNS</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Network Security</h3>
+                    <p>Standard Extended ACLs, Port Security, VPNs, LAN Attack Mitigation, Security Best Practices</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Cybersecurity Tools</h3>
+                    <p>Kali Linux, Metasploit, Nmap, Wireshark, Burp Suite, Hydra, Aircrack-ng</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Hardware</h3>
+                    <p>Cisco Routers (ISR Series), Cisco Switches (Catalyst Series), Firewalls, Wireless LAN Controllers (WLCs)</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Concepts & Automation</h3>
+                    <p>QoS, Virtualization (VMware), Software-Defined Networking (SDN), Network Automation (Python scripting)</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Operating Systems</h3>
+                    <p>Windows Server, Linux (Debian/Ubuntu), Windows 10/11</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="section">
-            <h3>Certifications</h3>
-            <p>Cisco Certified Network Associate (CCNA 200-301)</p>
-        </div>
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <article class="item">
+                <div class="item-header">
+                    <h3>Network Administrator</h3>
+                    <span class="date-location">Alexandria, Egypt | July 2021 - Present</span>
+                </div>
+                <p class="company">Gomla Market Company</p>
+                <ul>
+                    <li>Maintained 99.9% network uptime across the corporate infrastructure by proactively managing Cisco routers, switches, and firewalls.</li>
+                    <li>Implemented and optimized dynamic routing (OSPFv2), VLAN segmentation, and redundancy protocols (STP, EtherChannel) to enhance network performance and resilience.</li>
+                    <li>Conducted regular vulnerability assessments and penetration tests using Kali Linux tools (Nmap, Metasploit) to identify, report, and remediate security threats.</li>
+                    <li>Hardened network infrastructure by engineering and enforcing granular IPv4 access control lists (ACLs) and implementing device security policies.</li>
+                    <li>Authored and deployed automation scripts to streamline internal network processes, significantly improving operational efficiency and reducing manual configuration errors.</li>
+                    <li>Served as the primary escalation point for Tier 2/3 technical support, resolving complex hardware and software issues and consistently meeting service level agreements (SLAs).</li>
+                </ul>
+            </article>
+        </section>
 
-        <div class="section">
-            <h3>Skills</h3>
-            <ul>
-                <li>Networking</li>
-                <li>Programming</li>
-                <li>Technical Support</li>
-                <li>Operating Systems</li>
-                <li>Network Security</li>
-                <li>Problem Solving</li>
-            </ul>
-        </div>
+        <section id="projects">
+            <h2>Cybersecurity & Pentesting Projects</h2>
+            <article class="item">
+                <h3>Network Vulnerability Assessment (Home Lab)</h3>
+                <p>Deployed a virtual lab with vulnerable machines (Metasploitable2) to simulate a corporate network. Used Nmap for host discovery and port scanning, and exploited known vulnerabilities using Metasploit to gain access and suggest detailed remediation steps.</p>
+            </article>
+            <article class="item">
+                <h3>Web Application Security Testing</h3>
+                <p>Performed security testing on target web applications (e.g., OWASP Juice Shop) using Burp Suite and manual techniques. Successfully identified and documented common vulnerabilities, including SQL Injection and Cross-Site Scripting (XSS).</p>
+            </article>
+            <article class="item">
+                <h3>Wireless Network Auditing</h3>
+                <p>Conducted a security audit of a WPA2-PSK wireless network. Utilized the Aircrack-ng suite within Kali Linux to capture handshakes and perform a dictionary attack to crack the pre-shared key, providing recommendations for stronger security protocols.</p>
+            </article>
+        </section>
+        
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <article class="item">
+                <div class="item-header">
+                    <h3>Cisco Certified Network Associate (CCNA) 200-301</h3>
+                    <span class="date-location">July 2024</span>
+                </div>
+                <ul>
+                    <li>CCNAv7: Enterprise Networking, Security, and Automation</li>
+                    <li>CCNAv7: Switching, Routing, and Wireless Essentials</li>
+                    <li>CCNAv7: Introduction to Networks</li>
+                </ul>
+            </article>
+        </section>
 
-        <div class="section">
-            <h3>Languages</h3>
-            <ul>
-                <li>English (Fluent)</li>
-                <li>Russian (Intermediate)</li>
-                <li>Arabic (Fluent)</li>
-            </ul>
-        </div>
-    </div>
+        <section id="education">
+            <h2>Education</h2>
+            <article class="item">
+                <div class="item-header">
+                    <h3>Bachelor of Commerce</h3>
+                    <span class="date-location">Graduated 2020</span>
+                </div>
+                <p class="institution">Faculty of Commerce, Alexandria University, Egypt</p>
+            </article>
+        </section>
+        
+        <section id="languages">
+            <h2>Languages</h2>
+            <div class="lang-list">
+                <span><strong>Arabic:</strong> Native</span>
+                <span><strong>English:</strong> Fluent</span>
+                <span><strong>Russian:</strong> Intermediate</span>
+            </div>
+        </section>
 
-    <!-- Main Content -->
-    <div class="main">
-        <h1>Omar Essam</h1>
-        <h2>Network Administrator</h2>
-
-        <div class="section">
-            <h3>Profile</h3>
-            <p>IT Engineer | Network Administrator | Programmer</p>
-            <p>A highly motivated and detail-oriented IT Engineer with over two years of experience in network management, programming, and technical support. Proven expertise in designing, implementing, and troubleshooting network infrastructures. Strong knowledge of networking protocols, cloud technologies, and security best practices. Certified Cisco Network Associate (CCNA 200-301), with a solid understanding of routing, switching, and network operations. Adept at delivering technical support and managing IT projects to ensure seamless operations and customer satisfaction.</p>
-        </div>
-
-        <!-- Page Break -->
-        <div class="page-break"></div>
-
-        <div class="section">
-            <h3>Work Experience</h3>
-            <h4>IT Engineer | Gomla Market Company</h4>
-            <p>July 2022 - Present</p>
-            <ul>
-                <li>Managed and maintained the company's network infrastructure for smooth operations and minimal downtime.</li>
-                <li>Developed software solutions to streamline internal processes and enhance efficiency.</li>
-                <li>Provided technical support to resolve hardware and software issues, reducing system downtime.</li>
-                <li>Configured and troubleshot network devices, including routers, switches, and firewalls.</li>
-                <li>Collaborated with cross-functional teams to ensure timely IT service delivery.</li>
-            </ul>
-        </div>
-    </div>
-</div>
+    </main>
 
 </body>
 </html>
