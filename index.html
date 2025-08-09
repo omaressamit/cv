@@ -15,6 +15,7 @@
             --text-color: #34495e;
             --light-gray: #ecf0f1;
             --bg-color: #ffffff;
+            --link-hover-color: #2980b9;
         }
 
         body {
@@ -73,7 +74,7 @@
         }
 
         .contact-info a:hover {
-            color: var(--primary-color);
+            color: var(--link-hover-color);
             text-decoration: underline;
         }
 
@@ -136,6 +137,8 @@
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 0.25rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .item-header h3 {
@@ -166,71 +169,102 @@
         li {
             margin-bottom: 0.5rem;
         }
-
-        /* --- Projects --- */
-        #projects .item h3 {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-        }
-        #projects .item p {
-            margin: 0;
-        }
         
-        /* --- Certifications --- */
+        /* --- Certifications Summary List --- */
         #certifications ul {
             list-style: none;
-            padding-left: 20px;
-            margin-top: 0.5rem;
+            padding-left: 0;
         }
-        #certifications ul li::before {
+        #certifications li {
+            position: relative;
+            padding-left: 20px;
+        }
+        #certifications li::before {
             content: "—";
-            margin-right: 0.5rem;
+            position: absolute;
+            left: 0;
             color: var(--primary-color);
         }
 
         /* --- Languages --- */
-        #languages .lang-list {
+        #languages { margin-bottom: 0; }
+        .lang-list {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
         }
-        .lang-list span {
-            font-size: 1rem;
-        }
-        .lang-list strong {
-            color: var(--primary-color);
-        }
+        .lang-list span { font-size: 1rem; }
+        .lang-list strong { color: var(--primary-color); }
         
+        /* --- Certificate Details Section --- */
+        #course-details {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--light-gray);
+        }
+
+        .certificate-card {
+            background-color: #fcfdff;
+            border: 1px solid var(--light-gray);
+            border-left: 5px solid var(--secondary-color);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .certificate-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .certificate-card .details {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .certificate-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .proficiencies {
+            list-style-type: disc;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem 2rem;
+            padding-left: 20px;
+            margin: 0;
+        }
+        .proficiencies li {
+            font-size: 0.95rem;
+        }
+
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
             .container {
                 padding: 1.5rem;
                 margin: 1rem;
             }
-
-            header h1 {
-                font-size: 2.2rem;
-            }
-
-            header .job-title {
-                font-size: 1.3rem;
-            }
-
+            header h1 { font-size: 2.2rem; }
+            header .job-title { font-size: 1.3rem; }
             .contact-info {
                 flex-direction: column;
                 align-items: center;
                 gap: 0.75rem;
             }
-
             .item-header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 0.25rem;
             }
-
-            .date-location {
-                text-align: left;
-            }
+            .date-location { text-align: left; }
+            .proficiencies { grid-template-columns: 1fr; }
+            .certificate-card { padding: 1rem 1.5rem; }
         }
     </style>
 </head>
@@ -244,8 +278,8 @@
                 <span><i class="fas fa-phone"></i> +20-1274554868</span>
                 <span><i class="fas fa-envelope"></i> <a href="mailto:omaressamit@gmail.com">omaressamit@gmail.com</a></span>
                 <span><i class="fas fa-map-marker-alt"></i> Alexandria, Egypt</span>
-                <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/omar-essam-it/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
-                <span><i class="fab fa-github"></i> <a href="https://github.com/omaressam" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+                <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+                <span><i class="fab fa-github"></i> <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></span>
             </div>
         </header>
 
@@ -259,30 +293,12 @@
         <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Networking Protocols</h3>
-                    <p>TCP/IP, OSPFv2, STP, EtherChannel, VLANs & Inter-VLAN Routing, NAT, DHCP, DNS</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Network Security</h3>
-                    <p>Standard Extended ACLs, Port Security, VPNs, LAN Attack Mitigation, Security Best Practices</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Cybersecurity Tools</h3>
-                    <p>Kali Linux, Metasploit, Nmap, Wireshark, Burp Suite, Hydra, Aircrack-ng</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Hardware</h3>
-                    <p>Cisco Routers (ISR Series), Cisco Switches (Catalyst Series), Firewalls, Wireless LAN Controllers (WLCs)</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Concepts & Automation</h3>
-                    <p>QoS, Virtualization (VMware), Software-Defined Networking (SDN), Network Automation (Python scripting)</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Operating Systems</h3>
-                    <p>Windows Server, Linux (Debian/Ubuntu), Windows 10/11</p>
-                </div>
+                <div class="skill-category"><h3>Networking Protocols</h3><p>TCP/IP, OSPFv2, STP, EtherChannel, VLANs & Inter-VLAN Routing, NAT, DHCP, DNS</p></div>
+                <div class="skill-category"><h3>Network Security</h3><p>Standard Extended ACLs, Port Security, VPNs, LAN Attack Mitigation, Security Best Practices</p></div>
+                <div class="skill-category"><h3>Cybersecurity Tools</h3><p>Kali Linux, Metasploit, Nmap, Wireshark, Burp Suite, Hydra, Aircrack-ng</p></div>
+                <div class="skill-category"><h3>Hardware</h3><p>Cisco Routers (ISR Series), Cisco Switches (Catalyst Series), Firewalls, Wireless LAN Controllers (WLCs)</p></div>
+                <div class="skill-category"><h3>Concepts & Automation</h3><p>QoS, Virtualization (VMware), Software-Defined Networking (SDN), Network Automation (Python scripting)</p></div>
+                <div class="skill-category"><h3>Operating Systems</h3><p>Windows Server, Linux (Debian/Ubuntu), Windows 10/11</p></div>
             </div>
         </section>
 
@@ -307,18 +323,9 @@
 
         <section id="projects">
             <h2>Cybersecurity & Pentesting Projects</h2>
-            <article class="item">
-                <h3>Network Vulnerability Assessment (Home Lab)</h3>
-                <p>Deployed a virtual lab with vulnerable machines (Metasploitable2) to simulate a corporate network. Used Nmap for host discovery and port scanning, and exploited known vulnerabilities using Metasploit to gain access and suggest detailed remediation steps.</p>
-            </article>
-            <article class="item">
-                <h3>Web Application Security Testing</h3>
-                <p>Performed security testing on target web applications (e.g., OWASP Juice Shop) using Burp Suite and manual techniques. Successfully identified and documented common vulnerabilities, including SQL Injection and Cross-Site Scripting (XSS).</p>
-            </article>
-            <article class="item">
-                <h3>Wireless Network Auditing</h3>
-                <p>Conducted a security audit of a WPA2-PSK wireless network. Utilized the Aircrack-ng suite within Kali Linux to capture handshakes and perform a dictionary attack to crack the pre-shared key, providing recommendations for stronger security protocols.</p>
-            </article>
+            <article class="item"><h3>Network Vulnerability Assessment (Home Lab)</h3><p>Deployed a virtual lab with vulnerable machines (Metasploitable2) to simulate a corporate network. Used Nmap for host discovery and port scanning, and exploited known vulnerabilities using Metasploit to gain access and suggest detailed remediation steps.</p></article>
+            <article class="item"><h3>Web Application Security Testing</h3><p>Performed security testing on target web applications (e.g., OWASP Juice Shop) using Burp Suite and manual techniques. Successfully identified and documented common vulnerabilities, including SQL Injection and Cross-Site Scripting (XSS).</p></article>
+            <article class="item"><h3>Wireless Network Auditing</h3><p>Conducted a security audit of a WPA2-PSK wireless network. Utilized the Aircrack-ng suite within Kali Linux to capture handshakes and perform a dictionary attack to crack the pre-shared key, providing recommendations for stronger security protocols.</p></article>
         </section>
         
         <section id="certifications">
@@ -356,7 +363,60 @@
             </div>
         </section>
 
-    </main>
+        <!-- Certificate Details Section -->
+        <section id="course-details">
+            <h2>Cisco Course Completion Details</h2>
 
+            <article class="certificate-card">
+                <h3>CCNAv7: Enterprise Networking, Security, and Automation</h3>
+                <p class="details">Issued by Cisco Networking Academy on July 24, 2024</p>
+                <h4>Proficiencies:</h4>
+                <ul class="proficiencies">
+                    <li>Configure single-area OSPFv2 in both point-to-point and multiaccess networks.</li>
+                    <li>Explain how to mitigate threats and enhance network security using access control lists and security best practices.</li>
+                    <li>Implement standard IPv4 ACLs to filter traffic and secure administrative access.</li>
+                    <li>Configure NAT services on the edge router to provide IPv4 address scalability.</li>
+                    <li>Explain techniques to provide address scalability and secure remote access for WANs.</li>
+                    <li>Explain how to optimize, monitor, and troubleshoot scalable network architectures.</li>
+                    <li>Explain how networking devices implement QoS.</li>
+                    <li>Implement protocols to manage the network.</li>
+                    <li>Explain how technologies such as virtualization, software defined networking, and automation affect evolving networks.</li>
+                </ul>
+            </article>
+
+            <article class="certificate-card">
+                <h3>CCNAv7: Switching, Routing, and Wireless Essentials</h3>
+                <p class="details">Issued by Cisco Networking Academy on July 24, 2024</p>
+                <h4>Proficiencies:</h4>
+                <ul class="proficiencies">
+                    <li>Configure VLANs and Inter-VLAN routing applying security best practices.</li>
+                    <li>Troubleshoot inter-VLAN routing on Layer 3 devices.</li>
+                    <li>Configure redundancy on a switched network using STP and EtherChannel.</li>
+                    <li>Troubleshoot EtherChannel on switched networks.</li>
+                    <li>Explain how to support available and reliable networks using dynamic addressing and first-hop redundancy protocols.</li>
+                    <li>Configure dynamic address allocation in IPv6 networks.</li>
+                    <li>Configure WLANs using a WLC and L2 security best practices.</li>
+                    <li>Configure switch security to mitigate LAN attacks.</li>
+                    <li>Configure IPv4 and IPv6 static routing on routers.</li>
+                </ul>
+            </article>
+
+            <article class="certificate-card">
+                <h3>CCNAv7: Introduction to Networks</h3>
+                <p class="details">Issued by Cisco Networking Academy on July 17, 2024</p>
+                <h4>Proficiencies:</h4>
+                <ul class="proficiencies">
+                    <li>Configure switches and end devices to provide access to local and remote network resources.</li>
+                    <li>Explain how physical and data link layer protocols support the operation of Ethernet in a switched network.</li>
+                    <li>Configure routers to enable end-to-end connectivity between remote devices.</li>
+                    <li>Create IPv4 and IPv6 addressing schemes and verify network connectivity between devices.</li>
+                    <li>Explain how the upper layers of the OSI model support network applications.</li>
+                    <li>Configure a small network with security best practices.</li>
+                    <li>Troubleshoot connectivity in a small network.</li>
+                </ul>
+            </article>
+        </section>
+
+    </main>
 </body>
 </html>
